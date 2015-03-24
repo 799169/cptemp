@@ -12,7 +12,7 @@ clean:
 	-rm -rf $(TARGET) *.res
 
 %: %.cpp
-	$(CXX) $(CXXFLAGS) -o $@ $^
+	$(LINK.cpp) $^ $(LOADLIBES) $(LDLIBS) -o $@
 
 run: $(TARGET)
 	time ./$(TARGET)
